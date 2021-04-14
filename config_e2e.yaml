@@ -65,7 +65,7 @@ client:
 
   # Root of the MSP directories with keys and certs.
   cryptoconfig:
-    path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config
+    path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples
 
   # Some SDKs support pluggable KV stores, the properties under "credentialStore"
   # are implementation specific
@@ -156,7 +156,7 @@ organizations:
     mspid: Org1MSP
 
     # This org's MSP store (absolute path or relative to client.cryptoconfig)
-    cryptoPath:  peerOrganizations/org1.example.com/users/{username}@org1.example.com/msp
+    cryptoPath:  peerOrganizations\org1.example.com\users\{username}@org1.example.com\msp
 
     peers:
       - peer0.org1.example.com
@@ -179,7 +179,7 @@ organizations:
     mspid: Org2MSP
 
     # This org's MSP store (absolute path or relative to client.cryptoconfig)
-    cryptoPath:  peerOrganizations/org2.example.com/users/{username}@org2.example.com/msp
+    cryptoPath:  peerOrganizations\org2.example.com\users\{username}@org2.example.com\msp
 
     peers:
       - peer0.org2.example.com
@@ -194,7 +194,7 @@ organizations:
       mspID: OrdererMSP
 
       # Needed to load users crypto keys and certs for this org (absolute path or relative to global crypto path, DEV mode)
-      cryptoPath: ordererOrganizations/example.com/users/{username}@example.com/msp
+      cryptoPath: ordererOrganizations\example.com\users\{username}@example.com\msp
 
 
 #
@@ -207,7 +207,7 @@ orderers:
     # [Optional] Default: Infer from hostname
 #    url: orderer.example.com:7050
 
-    url: grpcs://localhost:7050
+    url: grpcs://192.168.126.128:7050
     # these are standard properties defined by the gRPC library
     # they will be passed in as-is to gRPC client constructor
     grpcOptions:
@@ -224,7 +224,7 @@ orderers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
+      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples\crypto-config\ordererOrganizations\example.com\tlsca\tlsca.example.com-cert.pem
 
 #
 # List of peers to send various requests to, including endorsement, query
@@ -235,7 +235,7 @@ peers:
     # this URL is used to send endorsement and query requests
     # [Optional] Default: Infer from hostname
 #    url: peer0.org1.example.com:7051
-    url: grpcs://localhost:7051
+    url: grpcs://192.168.126.128:7051
 
     grpcOptions:
       ssl-target-name-override: peer0.org1.example.com
@@ -251,12 +251,12 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples\crypto-config\peerOrganizations\org1.example.com\tlsca\tlsca.org1.example.com-cert.pem
 
   peer1.org1.example.com:
     # this URL is used to send endorsement and query requests
 #    url: peer1.org1.example.com:8051
-    url: grpcs://localhost:8051
+    url: grpcs://192.168.126.128:8051
 #
     grpcOptions:
       ssl-target-name-override: peer1.org1.example.com
@@ -272,12 +272,12 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples\crypto-config\peerOrganizations\org1.example.com\tlsca\tlsca.org1.example.com-cert.pem
 
 
   peer0.org2.example.com:
 #        url: peer0.org2.example.com:9051
-    url: grpcs://localhost:9051
+    url: grpcs://192.168.126.128:9051
     grpcOptions:
       ssl-target-name-override: peer0.org2.example.com
       # These parameters should be set in coordination with the keepalive policy on the server,
@@ -291,11 +291,11 @@ peers:
       allow-insecure: false
 
     tlsCACerts:
-      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples\crypto-config\peerOrganizations\org2.example.com\tlsca\tlsca.org2.example.com-cert.pem
 
   peer1.org2.example.com:
 #    url: peer0.org2.example.com:9051
-    url: grpcs://localhost:10051
+    url: grpcs://192.168.126.128:10051
     grpcOptions:
       ssl-target-name-override: peer1.org2.example.com
       # These parameters should be set in coordination with the keepalive policy on the server,
@@ -309,7 +309,7 @@ peers:
       allow-insecure: false
 
     tlsCACerts:
-      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples\crypto-config\peerOrganizations\org2.example.com\tlsca\tlsca.org2.example.com-cert.pem
 
 #
 # Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
@@ -322,13 +322,13 @@ peers:
 #    url: https://ca.org1.example.com:7054
 #    tlsCACerts:
 #      # Comma-Separated list of paths
-#      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+#      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
 #      # Client key and cert for SSL handshake with Fabric CA
 #      client:
 #        key:
-#          path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
+#          path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
 #        cert:
-#          path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
+#          path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
 #
 #    # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
 #    # needed to enroll and invoke new users.
@@ -341,13 +341,13 @@ peers:
 #    url: https://ca.org2.example.com:8054
 #    tlsCACerts:
 #      # Comma-Separated list of paths
-#      path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+#      path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
 #      # Client key and cert for SSL handshake with Fabric CA
 #      client:
 #        key:
-#          path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
+#          path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
 #        cert:
-#          path: /home/www/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
+#          path: C:\Users\lzw\go\src\github.com\lifegoeson\fabric-gateway-go-samples/crypto-config/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
 #
 #     # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
 #     # needed to enroll and invoke new users.
@@ -380,21 +380,21 @@ entityMatchers:
 #      mappedHost: peer0.org2.example.com
 
     - pattern: (\w+).org1.example.(\w+)
-      urlSubstitutionExp: grpcs://localhost:7051
+      urlSubstitutionExp: grpcs://192.168.126.128:7051
       sslTargetOverrideUrlSubstitutionExp: peer0.org1.example.com
       mappedHost: peer0.org1.example.com
 
     - pattern: (\w+).org2.example.(\w+)
-      urlSubstitutionExp: grpcs://localhost:9051
+      urlSubstitutionExp: grpcs://192.168.126.128:9051
       sslTargetOverrideUrlSubstitutionExp: peer0.org2.example.com
       mappedHost: peer0.org2.example.com
     - pattern: (\w+).org1.example.(\w+)
-      urlSubstitutionExp: grpcs://localhost:8051
+      urlSubstitutionExp: grpcs://192.168.126.128:8051
       sslTargetOverrideUrlSubstitutionExp: peer1.org1.example.com
       mappedHost: peer1.org1.example.com
 
     - pattern: (\w+).org2.example.(\w+)
-      urlSubstitutionExp: grpcs://localhost:10051
+      urlSubstitutionExp: grpcs://192.168.126.128:10051
       sslTargetOverrideUrlSubstitutionExp: peer1.org2.example.com
       mappedHost: peer1.org2.example.com
 
@@ -410,7 +410,7 @@ entityMatchers:
 
   orderer:
     - pattern: (\w+).example.(\w+)
-      urlSubstitutionExp: grpcs://localhost:7050
+      urlSubstitutionExp: grpcs://192.168.126.128:7050
       sslTargetOverrideUrlSubstitutionExp: orderer.example.com
       mappedHost: orderer.example.com
 #
